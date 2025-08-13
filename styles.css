@@ -1,0 +1,373 @@
+/* Reset and Base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+header {
+  background-color: #00FFFF;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #121212;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #1f1f1f;
+  padding: 0.5rem 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.3);
+  border-radius: 8px;
+  margin: 1rem auto;
+  max-width: 900px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #00FFFF;
+  font-weight: bold;
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #121212;
+  background-color: #00FFFF;
+  box-shadow: 0 0 8px #00FFFF;
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #8F00FF 0%, #00FFFF 100%);
+  color: #121212;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(143, 0, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  animation: pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #121212;
+  font-weight: 900;
+  text-shadow: 0 0 8px #ffffffaa;
+  margin-bottom: 0.5rem;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  animation-delay: 0.3s;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  color: #333;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.cta-buttons {
+  margin-top: 3rem;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  animation-delay: 0.9s;
+}
+
+.cta-buttons a {
+  background-color: #121212;
+  color: #00FFFF;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 900;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px #00FFFF;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cta-buttons a:hover {
+  background-color: #00FFFF;
+  color: #121212;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00FFFF;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1f1f1f;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Lists */
+ul {
+  margin-left: 1.5rem;
+  list-style: disc;
+}
+
+h2, h3 {
+  color: #00FFFF;
+}
+
+/* Contact Form */
+form {
+  max-width: 500px;
+  margin: 1rem auto;
+  background-color: #1f1f1f;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+form::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #00FFFF, #8F00FF);
+  border-radius: 15px;
+  filter: blur(8px);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #00FFFF;
+  position: relative;
+  padding-left: 25px;
+}
+
+form label::before {
+  content: "✏️";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #00FFFF;
+  border-radius: 6px;
+  background-color: #121212;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  border-color: #8F00FF;
+  outline: none;
+  box-shadow: 0 0 8px #8F00FF;
+}
+
+form button {
+  background-color: #00FFFF;
+  color: #121212;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 255, 255, 0.4);
+}
+
+form button:hover {
+  background-color: #00e0e0;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.7);
+}
+
+/* Connect with Us List */
+section ul li {
+  margin-bottom: 0.5rem;
+}
+
+section ul li a {
+  color: #00FFFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+section ul li a:hover {
+  color: #8F00FF;
+  text-decoration: underline;
+}
+
+/* Contact Section Background */
+section {
+  background: linear-gradient(135deg, #121212 0%, #1f1f1f 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 6px 20px rgba(143, 0, 255, 0.5);
+}
+
+/* Headings */
+h2 {
+  font-size: 2rem;
+  color: #00FFFF;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px #00FFFF;
+}
+
+h3 {
+  color: #8F00FF;
+  margin-top: 2rem;
+  text-align: center;
+  text-shadow: 0 0 6px #8F00FF;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #00FFFF;
+  border-radius: 6px;
+  background-color: #121212;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  border-color: #8F00FF;
+  outline: none;
+}
+
+form button {
+  background-color: #00FFFF;
+  color: #121212;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+  background-color: #00e0e0;
+  transform: scale(1.05);
+}
+
+/* Connect with Us List */
+section ul li {
+  margin-bottom: 0.5rem;
+}
+
+section ul li a {
+  color: #00FFFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+section ul li a:hover {
+  color: #8F00FF;
+  text-decoration: underline;
+}
+
+/* Services Cards */
+section > div {
+  background-color: #1f1f1f;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+section > div:hover {
+  box-shadow: 0 6px 18px rgba(143, 0, 255, 0.6);
+}
+
+section > div h3 {
+  margin-top: 0;
+  color: #8F00FF;
+}
+
+section > div ul {
+  margin-left: 1.5rem;
+  list-style: disc;
+}
